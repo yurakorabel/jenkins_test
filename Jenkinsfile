@@ -8,7 +8,8 @@ pipeline {
         stage('Connect to Server') {
             steps {
                 sh '''
-                    pwd
+                    ssh -i ~/.ssh/id_rsa ubuntu@3.68.217.151
+                   
                 '''
             }
         }
