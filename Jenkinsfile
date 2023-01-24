@@ -22,6 +22,7 @@ pipeline {
                     cd terraform
                     terraform -version
                     sudo -S terraform plan
+                    admin
                 '''
             }
         }
