@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                     
                      terraform -version
-                     cat main.tf
+                     ll
                 '''
             }
         }
