@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     
-                    terraform apply --auto-approve
+                     terraform -version
                    
                 '''
             }
@@ -28,8 +28,7 @@ pipeline {
         stage('play') {
             steps {
                 sh '''
-                    cd ../ansible_deploy
-                    ansible-playbook playbook.yml
+                    echo 11
                 '''
             }
         }
