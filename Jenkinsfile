@@ -16,7 +16,7 @@ pipeline {
         stage('New files') {
             steps {
                 sh '''
-                    echo 1
+                    echo good
                 '''
             }
         }
