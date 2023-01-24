@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                     cd terraform
                     terraform -version
-                    sudo terraform plan
+                    sudo -S terraform plan
                 '''
             }
         }
