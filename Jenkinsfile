@@ -8,22 +8,14 @@ pipeline {
         stage('Connect to Server') {
             steps {
                 sh '''
-                    ssh -i ~/.ssh/id_rsa ubuntu@3.68.217.151
+                    mkdir testdir
                 '''
             }
         }
         stage('New files') {
             steps {
                 sh '''
-                    cd /var/www/html
-
-                    sudo rm - rf *
-
-                    git clone https://github.com/yurakorabel/jenkins_test.git
-
-                    cp -fr jenkins_test/* ./
-
-                    sudo rm -rf jenkins_test/
+                    echo 1
                 '''
             }
         }
