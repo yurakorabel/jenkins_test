@@ -8,6 +8,7 @@ pipeline {
         stage('Start ansible-playbook') {
             steps {
                 sh '''
+                    cd ~
                     pwd
                    
                 '''
