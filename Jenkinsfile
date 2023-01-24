@@ -9,6 +9,8 @@ pipeline {
             steps {
                 sh '''
                     cd terraform
+                    sed -i.bak "s@Your access_key@${ID}@g" main.tf
+                    sed -i.bak "s@Your secret_key@${KEY}@g" main.tf
                     terraform init
                    
                 '''
@@ -17,8 +19,7 @@ pipeline {
         stage('apply') {
             steps {
                 sh '''
-                    sed -i.bak "s@Your access_key@${ID}@g" main.tf
-                    sed -i.bak "s@Your secret_key@${KEY}@g" main.tf
+                    
                     terraform apply --auto-approve
                    
                 '''
