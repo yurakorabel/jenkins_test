@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                     cd terraform
                     terraform -version
-                    terraform plan
+                    terraform apply
                     
                 '''
             }
