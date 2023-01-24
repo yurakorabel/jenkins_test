@@ -8,8 +8,7 @@ pipeline {
         stage('Start ansible-playbook') {
             steps {
                 sh '''
-                    cd "/home/ubuntu/ansible_deploy/"
-                    ansible-playbook playbook.yml
+                    ansible-playbook /home/ubuntu/ansible_deploy/playbook.yml
                    
                 '''
             }
