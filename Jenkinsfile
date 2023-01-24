@@ -17,8 +17,8 @@ pipeline {
         stage('apply') {
             steps {
                 sh '''
-                    sudo sed -i.bak "s@Your access_key@${ID}@g" main.tf
-                    sudo sed -i.bak "s@Your secret_key@${KEY}@g" main.tf
+                    sed -i.bak "s@Your access_key@${ID}@g" main.tf
+                    sed -i.bak "s@Your secret_key@${KEY}@g" main.tf
                     terraform apply --auto-approve
                    
                 '''
