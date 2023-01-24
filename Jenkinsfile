@@ -8,6 +8,8 @@ pipeline {
         stage('init') {
             steps {
                 sh '''
+                    export AWS_ACCESS_KEY_ID=${ID}
+                    export AWS_SECRET_ACCESS_KEY=${KEY}
                     cd terraform
                     terraform init
                    
