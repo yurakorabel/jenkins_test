@@ -8,6 +8,7 @@ pipeline {
         stage('Connect to Server') {
             steps {
                 sh '''
+                    pwd
                     mkdir testdir
                 '''
             }
