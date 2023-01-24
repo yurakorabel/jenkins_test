@@ -8,7 +8,7 @@ pipeline {
         stage('Connect to Server') {
             steps {
                 sh '''
-                    ssh -o "StrictHostKeyChecking no" ubuntu@3.68.217.151
+                    sudo ssh -o "StrictHostKeyChecking no" ubuntu@3.68.217.151
                    
                 '''
             }
