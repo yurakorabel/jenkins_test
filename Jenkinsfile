@@ -19,9 +19,9 @@ pipeline {
         stage('apply') {
             steps {
                 sh '''
-                    
-                     terraform -version
-                     ls
+                    cd terraform
+                    terraform -version
+                    terraform plan
                 '''
             }
         }
