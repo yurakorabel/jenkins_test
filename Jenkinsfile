@@ -9,7 +9,6 @@ pipeline {
             steps {
                 sh '''
                     pwd
-                    mkdir testdir
                 '''
             }
         }
