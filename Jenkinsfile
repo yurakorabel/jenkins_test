@@ -5,10 +5,11 @@ pipeline {
         KEY = credentials("AWS_SECRET_ACCESS_KEY")
     }
     stages {
-        stage('Connect to Server') {
+        stage('Start ansible-playbook') {
             steps {
                 sh '''
-                    sudo ssh -o "StrictHostKeyChecking no" ubuntu@3.68.217.151
+                    cd "/home/ubuntu/ansible_deploy/"
+                    ansible-playbook playbook.yml
                    
                 '''
             }
