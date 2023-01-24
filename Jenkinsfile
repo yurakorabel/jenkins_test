@@ -5,19 +5,29 @@ pipeline {
         KEY = credentials("AWS_SECRET_ACCESS_KEY")
     }
     stages {
-        stage('Start ansible-playbook') {
+        stage('init') {
             steps {
                 sh '''
-                    cd ~
-                    pwd
+                    cd terraform
+                    terraform init
                    
                 '''
             }
         }
-        stage('New files') {
+        stage('apply') {
             steps {
                 sh '''
-                    echo good
+                    cd terraform
+                    terraform apply --auto-approve
+                   
+                '''
+            }
+        }
+        stage('play') {
+            steps {
+                sh '''
+                    cd ../ansible_deploy
+                    ansible-playbook playbook.yml
                 '''
             }
         }
