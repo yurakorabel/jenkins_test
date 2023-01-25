@@ -24,6 +24,15 @@ pipeline {
                 '''
             }
         }
+        stage('ssh permission') {
+            steps {
+                sh '''
+                    sudo chmod 700 "/var/lib/jenkins/.ssh/"
+                    sudo chmod 600  "/var/lib/jenkins/.ssh/id_rsa"
+                    sudo chmod 644  "/var/lib/jenkins/.ssh/id_rsa.pub"
+                '''
+            }
+        }
         stage('play') {
             steps {
                sh '''
