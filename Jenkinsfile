@@ -20,8 +20,7 @@ pipeline {
             steps {
                 sh '''
                     cd terraform
-                    terraform -version
-                    cat main.tf
+                    terraform apply --auto-approve
                     
                 '''
             }
@@ -29,7 +28,8 @@ pipeline {
         stage('play') {
             steps {
                 sh '''
-                    echo 2
+                    cd ansible_deploy
+                    ansible-playbook playbook.yml
                 '''
             }
         }
