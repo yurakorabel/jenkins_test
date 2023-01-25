@@ -28,7 +28,7 @@ pipeline {
             steps {
                sh '''
                    cd ansible_deploy
-                   ansible-playbook playbook.yml
+                   sudo ansible-playbook playbook.yml
                '''
             }
         }
