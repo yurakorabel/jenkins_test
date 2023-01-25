@@ -27,7 +27,7 @@ pipeline {
         stage('play') {
             steps {
                 ansiblePlaybook( 
-                    playbook: 'ansible/playbook.yml',
+                    playbook: '/var/lib/jenkins/workspace/first_main/ansible_deploy/playbook.yml',
                     credentialsId: 'ssh_key_ansible',)
             }
         }
