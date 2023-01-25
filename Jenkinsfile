@@ -3,6 +3,7 @@ pipeline {
     environment{
         ID = credentials("AWS_ACCESS_KEY_ID")
         KEY = credentials("AWS_SECRET_ACCESS_KEY")
+        SSH_KEY = credentials("ssh_key_ansible")
     }
     stages {
         stage('init') {
@@ -28,7 +29,7 @@ pipeline {
             steps {
                 sh '''
                     cd ansible_deploy
-                    ansible-playbook playbook.yml
+                    ansible-playbook --private-key ${SSH_KEY} playbook.yml
                 '''
             }
         }
