@@ -28,6 +28,7 @@ pipeline {
             steps {
                 ansiblePlaybook( 
                     playbook: '/var/lib/jenkins/workspace/first_main/ansible_deploy/playbook.yml',
+                    inventory: '/var/lib/jenkins/workspace/first_main/ansible_deploy/hosts.cfg',
                     credentialsId: 'ssh_key_ansible',)
             }
         }
