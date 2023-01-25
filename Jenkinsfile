@@ -11,7 +11,7 @@ pipeline {
                     cd terraform
                     sed -i.bak "s@Your access_key@${ID}@g" main.tf
                     sed -i.bak "s@Your secret_key@${KEY}@g" main.tf
-                    terraform init
+                    sudo terraform init
                    
                 '''
             }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     cd terraform
-                    sudo terraform destroy --auto-approve
+                    sudo terraform apply --auto-approve
                 '''
             }
         }
