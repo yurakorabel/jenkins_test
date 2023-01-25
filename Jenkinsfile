@@ -20,7 +20,6 @@ pipeline {
             steps {
                 sh '''
                     cd terraform
-//                     terraform apply --auto-approve
                     echo 1
                 '''
             }
