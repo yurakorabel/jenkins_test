@@ -14,7 +14,7 @@ module "AWS_VM" {
   # instance_type = "t2.micro"
   # user_data     = "user_data.sh"
   # --- SSH Key ---
-  public_key    = "~/.ssh/id_rsa.pub"
+  public_key    = "/var/lib/jenkins/.ssh/id_rsa.pub"
   # =========================
 }
 
