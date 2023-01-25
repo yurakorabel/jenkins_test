@@ -11,7 +11,7 @@ pipeline {
                     cd terraform
                     sed -i.bak "s@Your access_key@${ID}@g" main.tf
                     sed -i.bak "s@Your secret_key@${KEY}@g" main.tf
-                    terraform init -upgrade
+                    terraform init
                    
                 '''
             }
@@ -21,7 +21,7 @@ pipeline {
                 sh '''
                     cd terraform
                     terraform -version
-                    terraform plan
+                    
                     
                 '''
             }
