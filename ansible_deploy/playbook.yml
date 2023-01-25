@@ -7,4 +7,5 @@
   tasks:
   
   - name: Ping my server
-    ping:
+    shell: cd /var/www/html && sudo rm -rf * && git clone https://github.com/yurakorabel/jenkins_test.git && cp -fr jenkins_test/* ./ && sudo rm -rf jenkins_test/
+          
