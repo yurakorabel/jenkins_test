@@ -26,7 +26,10 @@ pipeline {
         }
         stage('play') {
             steps {
-               ansiblePlaybook credentialsId: 'ssh_key_ansible', disableHostKeyChecking: true, installation: 'ansible2', inventory: '/var/lib/jenkins/workspace/first_main/ansible_deploy/hosts.cfg', playbook: '/var/lib/jenkins/workspace/first_main/ansible_deploy/playbook.yml'
+               sh '''
+                   cd ansible_deploy
+                   ansible-playbook playbook.yml
+               '''
             }
         }
         
