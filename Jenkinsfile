@@ -26,10 +26,9 @@ pipeline {
         }
         stage('play') {
             steps {
-                sh '''
-                    cd ansible_deploy
-                    ansible-playbook --private-key ~/.ssh/id_rsa playbook.yml
-                '''
+                ansiblePlaybook( 
+                    playbook: 'ansible/playbook.yml',
+                    credentialsId: 'ssh_key_ansible',)
             }
         }
         
