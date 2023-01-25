@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     cd terraform
-                   
+                    sudo terraform apply --auto-approve
                 '''
             }
         }
