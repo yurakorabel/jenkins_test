@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh '''
                     cd terraform
-                    echo 1
+                    terraform destroy --auto-approve
                 '''
             }
         }
