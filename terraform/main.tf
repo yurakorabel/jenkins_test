@@ -11,7 +11,7 @@ module "AWS_VM" {
   # ami_owner     = "099720109477"
   # ami_image     = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
   # --- Instance ---
-  # instance_type = "t2.micro"
+  instance_type = "t2.small"
   # user_data     = "user_data.sh"
   # --- SSH Key ---
   public_key    = "/var/lib/jenkins/.ssh/id_rsa.pub"
