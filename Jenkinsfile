@@ -29,7 +29,7 @@ pipeline {
         stage('play') {
             steps {
                 sh '''
-                    echo 11
+                    echo 2
                 '''
             }
         }
